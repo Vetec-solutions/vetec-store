@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VETEC | Robótica modular 100% española</title>
-  <meta name="description" content="VETEC distribuye soluciones robóticas modulares y software 100% español para acercar la robótica a nuevos mercados." />
+  <meta name="description" content="VETEC distribuye soluciones robóticas modulares y software 100% español para acercar la robótica profesional a nuevos mercados." />
   <style>
     :root{
       --bg:#f5f7fb;
@@ -42,7 +42,7 @@
       border:1px solid rgba(37,99,235,.12);
       font-size:.82rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase
     }
-    .title{font-size:clamp(2.2rem,5vw,4.8rem);line-height:.98;letter-spacing:-.05em;margin:18px 0 18px}
+    .title{font-size:clamp(2.2rem,5vw,4.9rem);line-height:.98;letter-spacing:-.05em;margin:18px 0 18px}
     .subtitle{font-size:1.08rem;line-height:1.8;color:var(--muted);max-width:780px;margin:0}
     .grid{display:grid;gap:24px}
     .card{
@@ -69,19 +69,19 @@
       background:rgba(245,247,251,.76);
       border-bottom:1px solid rgba(15,23,40,.06)
     }
-    .header-wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:78px}
-    .brand img{height:42px;width:auto;object-fit:contain}
+    .header-wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:86px}
+    .brand img{height:54px;width:auto;object-fit:contain}
     .nav{display:flex;align-items:center;gap:24px;color:#334155}
     .mobile{display:none;background:#fff;border:1px solid var(--line);border-radius:14px;width:46px;height:46px;font-size:20px}
 
     .hero{padding:48px 0 32px}
-    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:32px;align-items:center}
+    .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:34px;align-items:center}
     .hero-copy p{font-size:1.08rem;line-height:1.85;color:var(--muted);max-width:720px;margin:0}
     .hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}
     .stat{padding:18px;background:rgba(255,255,255,.72);border:1px solid rgba(15,23,40,.08);border-radius:20px;box-shadow:var(--shadow)}
     .stat strong{display:block;font-size:1.35rem;margin-bottom:8px}
     .stat span{font-size:.95rem;color:var(--muted);line-height:1.5}
-    .hero-visual{position:relative;min-height:640px}
+    .hero-visual{position:relative;min-height:660px}
     .hero-main{position:absolute;inset:0;border-radius:34px;overflow:hidden;box-shadow:var(--shadow);border:1px solid rgba(15,23,40,.08)}
     .hero-main img{width:100%;height:100%;object-fit:cover}
     .hero-main::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,23,40,.02) 0%, rgba(15,23,40,.08) 30%, rgba(15,23,40,.45) 100%)}
@@ -104,10 +104,10 @@
     .body h3{margin:0 0 12px;font-size:1.8rem;letter-spacing:-.03em}
     .body p{margin:0;color:var(--muted);line-height:1.78}
 
-    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
-    .feature{padding:22px;border-radius:22px;background:rgba(255,255,255,.72);border:1px solid rgba(15,23,40,.08);box-shadow:var(--shadow)}
-    .feature h4{margin:0 0 10px;font-size:1.12rem}
-    .feature p{margin:0;color:var(--muted);line-height:1.7;font-size:.97rem}
+    .spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+    .spec{padding:18px;border-radius:20px;background:rgba(255,255,255,.72);border:1px solid rgba(15,23,40,.08);box-shadow:var(--shadow)}
+    .spec strong{display:block;margin-bottom:8px;font-size:1rem}
+    .spec span{display:block;color:var(--muted);line-height:1.6;font-size:.95rem}
 
     .gallery{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;margin-top:32px}
     .stack{display:grid;gap:24px}
@@ -135,17 +135,18 @@
 
     @media (max-width:1080px){
       .hero-grid,.two-col,.gallery,.showcase,.cta{grid-template-columns:1fr}
-      .software,.use-cases,.features,.hero-stats{grid-template-columns:repeat(2,1fr)}
+      .software,.use-cases,.spec-grid,.hero-stats{grid-template-columns:repeat(2,1fr)}
       .hero-visual{min-height:520px}
     }
     @media (max-width:760px){
-      .nav{display:none;position:absolute;top:78px;left:16px;right:16px;flex-direction:column;align-items:stretch;padding:16px;border-radius:18px;background:rgba(255,255,255,.95);border:1px solid var(--line);box-shadow:var(--shadow)}
+      .nav{display:none;position:absolute;top:86px;left:16px;right:16px;flex-direction:column;align-items:stretch;padding:16px;border-radius:18px;background:rgba(255,255,255,.95);border:1px solid var(--line);box-shadow:var(--shadow)}
       .nav.open{display:flex}
       .mobile{display:inline-flex;align-items:center;justify-content:center}
-      .hero-stats,.software,.use-cases,.features{grid-template-columns:1fr}
+      .hero-stats,.software,.use-cases,.spec-grid{grid-template-columns:1fr}
       .hero-visual{min-height:420px}
       .section{padding:76px 0}
       .floating{grid-template-columns:1fr}
+      .brand img{height:46px}
     }
   </style>
 </head>
@@ -169,19 +170,19 @@
       <div class="container hero-grid">
         <div class="hero-copy">
           <div class="eyebrow">🇪🇸 Hardware y software 100% español</div>
-          <h1 class="title">VETEC distribuye robótica modular lista para entrar en operación.</h1>
+          <h1 class="title">Robótica modular lista para desplegar, configurar y operar desde el primer día.</h1>
           <p>
-            En un momento en el que la robótica cobra cada vez más peso, VETEC acerca al mercado la tecnología de Alisys Robotics con una propuesta clara: <strong>plataformas físicas modulares</strong>, <strong>software de control</strong> y una forma directa de iniciarse en robótica profesional sin complejidad innecesaria.
+            VETEC distribuye la tecnología de Alisys Robotics para acercar la robótica profesional a nuevos mercados. En un momento en el que este sector gana cada vez más peso, nuestra propuesta combina <strong>hardware modular</strong>, <strong>software de control</strong> y una entrada clara y accesible para empresas, integradores y proyectos que quieren empezar ya.
           </p>
           <div class="btn-row">
             <a href="#rex" class="btn btn-primary">Descubrir Rex</a>
             <a href="#software" class="btn btn-secondary">Ver software</a>
           </div>
           <div class="hero-stats">
-            <div class="stat"><strong>Modular</strong><span>Rex se adapta a sensores, cámaras y payloads según el cliente.</span></div>
-            <div class="stat"><strong>Listo desde el minuto uno</strong><span>Una solución completa con hardware y software integrables.</span></div>
-            <div class="stat"><strong>Nuevos mercados</strong><span>Inspección, vigilancia, pilotos, formación e I+D.</span></div>
-            <div class="stat"><strong>Entrada accesible</strong><span>VETEC facilita adoptar robótica con baja fricción técnica y comercial.</span></div>
+            <div class="stat"><strong>100% español</strong><span>Tecnología desarrollada en España, con una propuesta clara y cercana para el mercado.</span></div>
+            <div class="stat"><strong>Modular</strong><span>Una misma base puede configurarse con sensores, cámaras y distintos payloads.</span></div>
+            <div class="stat"><strong>Listo desde el minuto uno</strong><span>Software y hardware integrables para una solución directamente utilizable.</span></div>
+            <div class="stat"><strong>Baja barrera de entrada</strong><span>Una forma realista de iniciarse en robótica profesional sin complejidad innecesaria.</span></div>
           </div>
         </div>
         <div class="hero-visual">
@@ -190,29 +191,10 @@
           </div>
           <div class="floating">
             <div class="floating-card">
-              <h3>Robótica accesible, profesional y configurable</h3>
-              <p>Distribución de tecnología Alisys Robotics para acercar la robótica a clientes que necesitan una solución real, visual y directamente utilizable.</p>
+              <h3>Distribución especializada de tecnología robótica</h3>
+              <p>VETEC presenta plataformas y software de Alisys Robotics con una narrativa simple: producto real, configurable y preparado para casos de uso inmediatos.</p>
             </div>
             <div class="floating-pill">VETEC · Distribución especializada</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="features">
-          <div class="feature">
-            <h4>Distribución con enfoque práctico</h4>
-            <p>VETEC no fabrica la tecnología: la distribuye y la acerca de forma clara, comercial y usable a nuevos segmentos del mercado.</p>
-          </div>
-          <div class="feature">
-            <h4>Solución completa</h4>
-            <p>Plataforma robótica, control móvil, operación centralizada y entorno ejecutivo de supervisión en un mismo ecosistema.</p>
-          </div>
-          <div class="feature">
-            <h4>Momento de mercado</h4>
-            <p>La robótica está ganando peso y VETEC quiere facilitar la entrada al sector con una propuesta seria, accesible y 100% española.</p>
           </div>
         </div>
       </div>
@@ -222,14 +204,10 @@
       <div class="container two-col">
         <div>
           <div class="eyebrow">Rex</div>
-          <h2 class="title" style="font-size:clamp(2rem,4vw,3.8rem)">Una base robótica modular para múltiples configuraciones.</h2>
+          <h2 class="title" style="font-size:clamp(2rem,4vw,3.8rem)">Una plataforma compacta, modular y 100% hecha en España.</h2>
           <p class="subtitle">
-            Rex se presenta como una plataforma compacta y configurable que puede personalizarse según la misión. Sobre la misma base se pueden integrar cámaras, sensores y otros payloads para inspección, vigilancia, demostración técnica o despliegues a medida.
+            Rex es la base física sobre la que construir distintas soluciones. Puede configurarse según el cliente y la misión, integrando cámaras, sensores y otros payloads sobre una plataforma de muy bajo coste, preparada para inspección, vigilancia, pilotos y despliegues a medida.
           </p>
-          <div class="btn-row">
-            <a href="#aplicaciones" class="btn btn-primary">Ver aplicaciones</a>
-            <a href="#contacto" class="btn btn-secondary">Solicitar propuesta</a>
-          </div>
         </div>
         <article class="card">
           <div class="media">
@@ -237,6 +215,18 @@
             <div class="label">Base configurable según el cliente</div>
           </div>
         </article>
+      </div>
+
+      <div class="container spec-grid">
+        <div class="spec"><strong>Dimensiones</strong><span>330 × 390 mm en un formato compacto y fácil de desplegar.</span></div>
+        <div class="spec"><strong>Peso</strong><span>3 kg de plataforma base para facilitar transporte y operación.</span></div>
+        <div class="spec"><strong>Autonomía</strong><span>2 horas ampliables según configuración y misión.</span></div>
+        <div class="spec"><strong>Motores</strong><span>Motores brushless para una operación robusta y eficiente.</span></div>
+        <div class="spec"><strong>Control</strong><span>Arquitectura basada en Raspberry Pi 5.</span></div>
+        <div class="spec"><strong>Payload</strong><span>Capacidad de carga de hasta 20 kg.</span></div>
+        <div class="spec"><strong>Completamente modular</strong><span>Preparado para integrar sensores, cámaras y otros payloads.</span></div>
+        <div class="spec"><strong>Muy bajo coste</strong><span>Una base competitiva para introducir robótica en más clientes y más sectores.</span></div>
+        <div class="spec"><strong>Hecho en España</strong><span>Producto nacional con una narrativa comercial fuerte y diferenciadora.</span></div>
       </div>
 
       <div class="container gallery">
@@ -275,7 +265,7 @@
           <article class="card">
             <span class="tag">Plataforma Robótica Modular</span>
             <h3>Visión ejecutiva y operación configurable</h3>
-            <p>Dashboards, widgets ilimitados, programación de misiones y una capa agnóstica pensada para supervisión y control adaptados a cada despliegue.</p>
+            <p>Dashboards, widgets ilimitados, programación de misiones y una capa agnóstica pensada para supervisión, monitorización y control adaptados a cada despliegue.</p>
           </article>
           <article class="card">
             <span class="tag">Arcus Lite</span>
@@ -292,14 +282,29 @@
         <div class="showcase">
           <article class="card">
             <div class="media" style="min-height:420px">
-              <img src="captura arcus lite.png" alt="Interfaz Arcus Lite" />
-              <div class="label">Arcus Lite · control móvil</div>
+              <img src="Captura plataforma modular.png" alt="Interfaz de la plataforma robótica modular" />
+              <div class="label">Plataforma Robótica Modular · dashboards y misiones</div>
             </div>
           </article>
           <article class="card">
             <div class="media" style="min-height:420px">
+              <img src="captura arcus lite.png" alt="Interfaz Arcus Lite" />
+              <div class="label">Arcus Lite · control móvil</div>
+            </div>
+          </article>
+        </div>
+
+        <div class="showcase">
+          <article class="card">
+            <div class="media" style="min-height:420px">
               <img src="Captura Arcus defense.png" alt="Interfaz Arcus Defense" />
               <div class="label">Arcus Defense · control centralizado</div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="media" style="min-height:420px">
+              <img src="rex vigilante.png" alt="Rex en vigilancia nocturna" />
+              <div class="label">Aplicación · vigilancia y operación remota</div>
             </div>
           </article>
         </div>
@@ -311,7 +316,7 @@
         <div class="eyebrow">Aplicaciones</div>
         <h2 class="title" style="font-size:clamp(2rem,4vw,3.8rem)">Una puerta de entrada real a la robótica aplicada.</h2>
         <p class="subtitle">
-          VETEC quiere acercar la robótica a quienes necesitan empezar ya: con producto, con software y con una narrativa simple de adopción. Esta propuesta encaja especialmente bien en sectores donde la tecnología ya aporta valor desde el primer despliegue.
+          VETEC quiere acercar la robótica a quienes necesitan empezar ya: con producto, con software y con una narrativa simple de adopción. Esta propuesta encaja especialmente bien en sectores donde la tecnología aporta valor desde el primer despliegue.
         </p>
         <div class="use-cases">
           <div class="use"><strong>Inspección industrial</strong><span>Espacios confinados, conductos, zonas de difícil acceso y entornos técnicos.</span></div>
@@ -326,7 +331,7 @@
       <div class="container two-col">
         <article class="card">
           <div class="media" style="min-height:460px;background:#0b1220">
-            <video controls playsinline preload="metadata" poster="rex modular.png">
+            <video controls playsinline preload="metadata" poster="Captura plataforma modular.png">
               <source src="Rover5g.mp4" type="video/mp4" />
               Tu navegador no puede reproducir este vídeo.
             </video>
@@ -334,9 +339,9 @@
         </article>
         <div>
           <div class="eyebrow">Vídeo demo</div>
-          <h2 class="title" style="font-size:clamp(2rem,4vw,3.6rem)">La plataforma en movimiento refuerza la propuesta.</h2>
+          <h2 class="title" style="font-size:clamp(2rem,4vw,3.6rem)">La plataforma robótica modular en acción.</h2>
           <p class="subtitle">
-            Este bloque sirve para mostrar que no se trata de una idea abstracta, sino de una tecnología ya visible, demostrable y lista para presentarse como producto real. Es especialmente útil para vender la propuesta a un partner, a un cliente o internamente.
+            Este bloque refuerza la propuesta comercial enseñando una tecnología real, visible y demostrable. La portada del vídeo utiliza la captura de la plataforma robótica modular para vincular directamente el producto físico con el entorno software que lo acompaña.
           </p>
         </div>
       </div>
