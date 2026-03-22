@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VETEC | Robótica modular 100% española</title>
+  <meta name="description" content="VETEC distribuye soluciones robóticas modulares y software 100% español para acercar la robótica a nuevos mercados." />
+  <style>
+    :root{
+      --bg:#f5f7fb;
+      --panel:#ffffff;
+      --text:#0f1728;
+      --muted:#5c667a;
+      --line:rgba(15,23,40,.10);
+      --blue:#2563eb;
+      --blue-2:#1d4ed8;
+      --soft:#e9eefb;
+      --shadow:0 20px 50px rgba(16,24,40,.08);
+      --radius-xl:32px;
+      --radius-lg:24px;
+      --radius-md:18px;
+      --max:1240px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(37,99,235,.10), transparent 22%),
+        linear-gradient(180deg,#f7f9fd 0%,#f3f6fb 45%,#eef3fa 100%);
+    }
+    img,video{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(var(--max),calc(100% - 32px));margin:0 auto}
+    .section{padding:96px 0}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:10px 14px;border-radius:999px;
+      background:rgba(37,99,235,.07);color:var(--blue);
+      border:1px solid rgba(37,99,235,.12);
+      font-size:.82rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase
+    }
+    .title{font-size:clamp(2.2rem,5vw,4.8rem);line-height:.98;letter-spacing:-.05em;margin:18px 0 18px}
+    .subtitle{font-size:1.08rem;line-height:1.8;color:var(--muted);max-width:780px;margin:0}
+    .grid{display:grid;gap:24px}
+    .card{
+      background:rgba(255,255,255,.72);
+      border:1px solid rgba(255,255,255,.75);
+      backdrop-filter:blur(16px);
+      box-shadow:var(--shadow);
+      border-radius:var(--radius-lg);
+      overflow:hidden;
+    }
+    .btn-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+    .btn{
+      min-height:54px;padding:0 22px;border-radius:16px;font-weight:700;
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      transition:.2s ease;border:1px solid transparent
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:linear-gradient(135deg,var(--blue),var(--blue-2));color:#fff;box-shadow:0 12px 28px rgba(37,99,235,.22)}
+    .btn-secondary{background:#fff;border-color:var(--line);color:var(--text)}
+
+    .header{
+      position:sticky;top:0;z-index:100;
+      backdrop-filter:blur(18px);
+      background:rgba(245,247,251,.76);
+      border-bottom:1px solid rgba(15,23,40,.06)
+    }
+    .header-wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:78px}
+    .brand img{height:42px;width:auto;object-fit:contain}
+    .nav{display:flex;align-items:center;gap:24px;color:#334155}
+    .mobile{display:none;background:#fff;border:1px solid var(--line);border-radius:14px;width:46px;height:46px;font-size:20px}
+
+    .hero{padding:48px 0 32px}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:32px;align-items:center}
+    .hero-copy p{font-size:1.08rem;line-height:1.85;color:var(--muted);max-width:720px;margin:0}
+    .hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}
+    .stat{padding:18px;background:rgba(255,255,255,.72);border:1px solid rgba(15,23,40,.08);border-radius:20px;box-shadow:var(--shadow)}
+    .stat strong{display:block;font-size:1.35rem;margin-bottom:8px}
+    .stat span{font-size:.95rem;color:var(--muted);line-height:1.5}
+    .hero-visual{position:relative;min-height:640px}
+    .hero-main{position:absolute;inset:0;border-radius:34px;overflow:hidden;box-shadow:var(--shadow);border:1px solid rgba(15,23,40,.08)}
+    .hero-main img{width:100%;height:100%;object-fit:cover}
+    .hero-main::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,23,40,.02) 0%, rgba(15,23,40,.08) 30%, rgba(15,23,40,.45) 100%)}
+    .floating{
+      position:absolute;z-index:3;right:18px;bottom:18px;left:18px;
+      display:grid;grid-template-columns:1fr auto;gap:18px;align-items:end
+    }
+    .floating-card{
+      background:rgba(255,255,255,.82);backdrop-filter:blur(18px);border-radius:22px;
+      padding:18px 20px;border:1px solid rgba(255,255,255,.8);box-shadow:var(--shadow)
+    }
+    .floating-card h3{margin:0 0 8px;font-size:1.1rem}
+    .floating-card p{margin:0;color:#475467;line-height:1.6}
+    .floating-pill{display:flex;align-items:center;justify-content:center;padding:16px 18px;border-radius:18px;background:rgba(15,23,40,.84);color:#fff;font-weight:700;min-width:240px}
+
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center}
+    .media{position:relative;overflow:hidden;min-height:320px;background:#dfe7f5}
+    .media img,.media video{width:100%;height:100%;object-fit:cover}
+    .body{padding:26px}
+    .body h3{margin:0 0 12px;font-size:1.8rem;letter-spacing:-.03em}
+    .body p{margin:0;color:var(--muted);line-height:1.78}
+
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+    .feature{padding:22px;border-radius:22px;background:rgba(255,255,255,.72);border:1px solid rgba(15,23,40,.08);box-shadow:var(--shadow)}
+    .feature h4{margin:0 0 10px;font-size:1.12rem}
+    .feature p{margin:0;color:var(--muted);line-height:1.7;font-size:.97rem}
+
+    .gallery{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;margin-top:32px}
+    .stack{display:grid;gap:24px}
+    .label{position:absolute;left:16px;bottom:16px;background:rgba(255,255,255,.84);color:#111827;border:1px solid rgba(255,255,255,.8);padding:10px 14px;border-radius:999px;font-size:.88rem;font-weight:700;backdrop-filter:blur(10px)}
+
+    .software{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:34px}
+    .software .card{padding:26px}
+    .software .tag{display:inline-block;margin-bottom:12px;font-size:.76rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--blue)}
+    .software h3{margin:0 0 12px;font-size:1.45rem}
+    .software p{margin:0;color:var(--muted);line-height:1.75}
+
+    .showcase{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:30px}
+
+    .use-cases{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:32px}
+    .use{padding:22px;border-radius:22px;background:rgba(255,255,255,.72);border:1px solid rgba(15,23,40,.08);box-shadow:var(--shadow)}
+    .use strong{display:block;margin-bottom:10px;font-size:1.08rem}
+    .use span{display:block;color:var(--muted);line-height:1.7;font-size:.96rem}
+
+    .cta{padding:34px;border-radius:30px;background:linear-gradient(135deg,#0f1728,#1f3b8a);color:#fff;box-shadow:var(--shadow);display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+    .cta h2{margin:0 0 10px;font-size:clamp(1.8rem,4vw,3rem);letter-spacing:-.04em}
+    .cta p{margin:0;line-height:1.75;color:rgba(255,255,255,.82);max-width:760px}
+
+    footer{padding:34px 0 54px;color:#5b6476}
+    .footer{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap;border-top:1px solid rgba(15,23,40,.08);padding-top:22px}
+
+    @media (max-width:1080px){
+      .hero-grid,.two-col,.gallery,.showcase,.cta{grid-template-columns:1fr}
+      .software,.use-cases,.features,.hero-stats{grid-template-columns:repeat(2,1fr)}
+      .hero-visual{min-height:520px}
+    }
+    @media (max-width:760px){
+      .nav{display:none;position:absolute;top:78px;left:16px;right:16px;flex-direction:column;align-items:stretch;padding:16px;border-radius:18px;background:rgba(255,255,255,.95);border:1px solid var(--line);box-shadow:var(--shadow)}
+      .nav.open{display:flex}
+      .mobile{display:inline-flex;align-items:center;justify-content:center}
+      .hero-stats,.software,.use-cases,.features{grid-template-columns:1fr}
+      .hero-visual{min-height:420px}
+      .section{padding:76px 0}
+      .floating{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-wrap">
+      <a class="brand" href="#inicio"><img src="LOGO VETEC.png" alt="Logo VETEC" /></a>
+      <button class="mobile" id="mobileToggle">☰</button>
+      <nav class="nav" id="mainNav">
+        <a href="#rex">Rex</a>
+        <a href="#software">Software</a>
+        <a href="#aplicaciones">Aplicaciones</a>
+        <a href="#video">Vídeo</a>
+        <a href="#contacto" class="btn btn-primary">Solicitar información</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">🇪🇸 Hardware y software 100% español</div>
+          <h1 class="title">VETEC distribuye robótica modular lista para entrar en operación.</h1>
+          <p>
+            En un momento en el que la robótica cobra cada vez más peso, VETEC acerca al mercado la tecnología de Alisys Robotics con una propuesta clara: <strong>plataformas físicas modulares</strong>, <strong>software de control</strong> y una forma directa de iniciarse en robótica profesional sin complejidad innecesaria.
+          </p>
+          <div class="btn-row">
+            <a href="#rex" class="btn btn-primary">Descubrir Rex</a>
+            <a href="#software" class="btn btn-secondary">Ver software</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat"><strong>Modular</strong><span>Rex se adapta a sensores, cámaras y payloads según el cliente.</span></div>
+            <div class="stat"><strong>Listo desde el minuto uno</strong><span>Una solución completa con hardware y software integrables.</span></div>
+            <div class="stat"><strong>Nuevos mercados</strong><span>Inspección, vigilancia, pilotos, formación e I+D.</span></div>
+            <div class="stat"><strong>Entrada accesible</strong><span>VETEC facilita adoptar robótica con baja fricción técnica y comercial.</span></div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-main">
+            <img src="rex vigilante.png" alt="Rex en misión de vigilancia" />
+          </div>
+          <div class="floating">
+            <div class="floating-card">
+              <h3>Robótica accesible, profesional y configurable</h3>
+              <p>Distribución de tecnología Alisys Robotics para acercar la robótica a clientes que necesitan una solución real, visual y directamente utilizable.</p>
+            </div>
+            <div class="floating-pill">VETEC · Distribución especializada</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="features">
+          <div class="feature">
+            <h4>Distribución con enfoque práctico</h4>
+            <p>VETEC no fabrica la tecnología: la distribuye y la acerca de forma clara, comercial y usable a nuevos segmentos del mercado.</p>
+          </div>
+          <div class="feature">
+            <h4>Solución completa</h4>
+            <p>Plataforma robótica, control móvil, operación centralizada y entorno ejecutivo de supervisión en un mismo ecosistema.</p>
+          </div>
+          <div class="feature">
+            <h4>Momento de mercado</h4>
+            <p>La robótica está ganando peso y VETEC quiere facilitar la entrada al sector con una propuesta seria, accesible y 100% española.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="rex">
+      <div class="container two-col">
+        <div>
+          <div class="eyebrow">Rex</div>
+          <h2 class="title" style="font-size:clamp(2rem,4vw,3.8rem)">Una base robótica modular para múltiples configuraciones.</h2>
+          <p class="subtitle">
+            Rex se presenta como una plataforma compacta y configurable que puede personalizarse según la misión. Sobre la misma base se pueden integrar cámaras, sensores y otros payloads para inspección, vigilancia, demostración técnica o despliegues a medida.
+          </p>
+          <div class="btn-row">
+            <a href="#aplicaciones" class="btn btn-primary">Ver aplicaciones</a>
+            <a href="#contacto" class="btn btn-secondary">Solicitar propuesta</a>
+          </div>
+        </div>
+        <article class="card">
+          <div class="media">
+            <img src="rex modular.png" alt="Vista superior modular de Rex" />
+            <div class="label">Base configurable según el cliente</div>
+          </div>
+        </article>
+      </div>
+
+      <div class="container gallery">
+        <article class="card">
+          <div class="media">
+            <img src="Rex Almacén.png" alt="Rex en un almacén" />
+            <div class="label">Caso de uso · almacenes y entornos logísticos</div>
+          </div>
+        </article>
+        <div class="stack">
+          <article class="card">
+            <div class="media" style="min-height:250px">
+              <img src="rex futbol.png" alt="Rex en campo" />
+              <div class="label">Caso de uso · supervisión en exteriores</div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="media" style="min-height:250px">
+              <img src="rex tuberia.png" alt="Rex en inspección de tuberías" />
+              <div class="label">Caso de uso · inspección en espacios reducidos</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="software">
+      <div class="container">
+        <div class="eyebrow">Software</div>
+        <h2 class="title" style="font-size:clamp(2rem,4vw,3.8rem)">Tres formas de operar la misma tecnología.</h2>
+        <p class="subtitle">
+          VETEC distribuye la familia de software de Alisys Robotics para que cada cliente pueda elegir el nivel de control que necesita: desde operación simple desde Android hasta supervisión multi-activo o dashboards ejecutivos configurables.
+        </p>
+
+        <div class="software">
+          <article class="card">
+            <span class="tag">Plataforma Robótica Modular</span>
+            <h3>Visión ejecutiva y operación configurable</h3>
+            <p>Dashboards, widgets ilimitados, programación de misiones y una capa agnóstica pensada para supervisión y control adaptados a cada despliegue.</p>
+          </article>
+          <article class="card">
+            <span class="tag">Arcus Lite</span>
+            <h3>Control simple desde Android</h3>
+            <p>Una experiencia directa para operar el robot desde móvil o tablet, ideal para uso 1 a 1, demostraciones, pilotos y una entrada sencilla a la robótica.</p>
+          </article>
+          <article class="card">
+            <span class="tag">Arcus Defense</span>
+            <h3>Mapa central y gestión avanzada</h3>
+            <p>Entorno orientado a vigilancia y operación táctica con monitorización centralizada, vídeo y teleoperación sobre mapa.</p>
+          </article>
+        </div>
+
+        <div class="showcase">
+          <article class="card">
+            <div class="media" style="min-height:420px">
+              <img src="captura arcus lite.png" alt="Interfaz Arcus Lite" />
+              <div class="label">Arcus Lite · control móvil</div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="media" style="min-height:420px">
+              <img src="Captura Arcus defense.png" alt="Interfaz Arcus Defense" />
+              <div class="label">Arcus Defense · control centralizado</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="aplicaciones">
+      <div class="container">
+        <div class="eyebrow">Aplicaciones</div>
+        <h2 class="title" style="font-size:clamp(2rem,4vw,3.8rem)">Una puerta de entrada real a la robótica aplicada.</h2>
+        <p class="subtitle">
+          VETEC quiere acercar la robótica a quienes necesitan empezar ya: con producto, con software y con una narrativa simple de adopción. Esta propuesta encaja especialmente bien en sectores donde la tecnología ya aporta valor desde el primer despliegue.
+        </p>
+        <div class="use-cases">
+          <div class="use"><strong>Inspección industrial</strong><span>Espacios confinados, conductos, zonas de difícil acceso y entornos técnicos.</span></div>
+          <div class="use"><strong>Vigilancia y seguridad</strong><span>Supervisión remota, rondas en exteriores y despliegues con cámaras y focos.</span></div>
+          <div class="use"><strong>Pilotos e introducción a robótica</strong><span>Proyectos iniciales, demostraciones y primeras implantaciones con bajo coste de entrada.</span></div>
+          <div class="use"><strong>Formación e I+D</strong><span>Universidades, laboratorios y equipos que buscan una base sobre la que experimentar.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="video">
+      <div class="container two-col">
+        <article class="card">
+          <div class="media" style="min-height:460px;background:#0b1220">
+            <video controls playsinline preload="metadata" poster="rex modular.png">
+              <source src="Rover5g.mp4" type="video/mp4" />
+              Tu navegador no puede reproducir este vídeo.
+            </video>
+          </div>
+        </article>
+        <div>
+          <div class="eyebrow">Vídeo demo</div>
+          <h2 class="title" style="font-size:clamp(2rem,4vw,3.6rem)">La plataforma en movimiento refuerza la propuesta.</h2>
+          <p class="subtitle">
+            Este bloque sirve para mostrar que no se trata de una idea abstracta, sino de una tecnología ya visible, demostrable y lista para presentarse como producto real. Es especialmente útil para vender la propuesta a un partner, a un cliente o internamente.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contacto">
+      <div class="container">
+        <div class="cta">
+          <div>
+            <h2>VETEC distribuye una forma más directa de entrar en robótica.</h2>
+            <p>
+              Una propuesta basada en tecnología de Alisys Robotics, con hardware y software 100% español, pensada para acercar la robótica a nuevos clientes y nuevos mercados con una narrativa clara, visual y comercial.
+            </p>
+          </div>
+          <div class="btn-row" style="margin-top:0;justify-content:flex-end">
+            <a class="btn btn-secondary" href="mailto:contacto@vetec.es">contacto@vetec.es</a>
+            <a class="btn btn-primary" href="tel:+34000000000">+34 000 000 000</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer">
+      <div><strong>VETEC</strong><br />Distribución especializada de robótica modular y software 100% español.</div>
+      <div style="display:flex;gap:18px;flex-wrap:wrap">
+        <a href="#rex">Rex</a>
+        <a href="#software">Software</a>
+        <a href="#aplicaciones">Aplicaciones</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('mobileToggle');
+    const nav = document.getElementById('mainNav');
+    toggle.addEventListener('click', () => nav.classList.toggle('open'));
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', () => nav.classList.remove('open'));
+    });
+  </script>
+</body>
+</html>
